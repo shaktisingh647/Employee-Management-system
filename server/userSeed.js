@@ -53,6 +53,10 @@ const registerUser = async (req,res) =>{
          {
             return res.status(409).json({message:"User already exists"});
          }
+         if(existingUser)
+         {
+            return res.status(409).json({message:"User already exists"});
+         }
          
      }catch(err)
      {
@@ -81,6 +85,9 @@ const registerUserr = async(res,req) =>{
       })
    }
 //   hashing the password
+const hashPassword = await bcrypt.hash(password,10);
+//saving the new user to the database
+
  }catch(err)
  {
    return res.status(500).json({
