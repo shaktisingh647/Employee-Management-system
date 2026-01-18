@@ -11,3 +11,4 @@ app.use(express.json());
 app.listen(process.env.PORT ||5000, (res,req)=>{
     console.log(`server is listening on port ${process.env.PORT ||5000}`);
 })
+
