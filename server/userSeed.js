@@ -19,7 +19,7 @@ const registerUser = async (req,res) =>{
          const existingUser = User.findOne({email});
          if(existingUser)
          {
-            return res.status(409);
+            return res.status(409).json({message:"User Already Exists"});
          }
          if(existingUser)
          {
